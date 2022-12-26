@@ -1,0 +1,29 @@
+body {
+  height: 95vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  width: 50vw;
+  height: 60vh;
+  border: 1px black solid;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  justify-content: space-evenly;
+}
+
+.btn {
+  border: none;
+  padding: 0.2rem 0 0.2rem 0;
+  width: 5vw;
+  border-radius: 8px;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}

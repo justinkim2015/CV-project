@@ -1,0 +1,37 @@
+* {
+  /* border: 1px dotted red; */
+}
+
+#work-form {
+  display: flex;
+  margin: 1rem;
+  padding: 1rem 3rem 1rem 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#work-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#task-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5rem;
+}
+
+#tasks {
+  height: 10vh;
+  width: 30vw;
+}
