@@ -1,54 +1,39 @@
-import {Component} from 'react'
 import '../styles/App.css';
-import '../styles/School.css';
+import '../styles/Personal.css';
+import React, { useState } from "react";
 
-class SchoolInfo extends Component {
-  constructor(props) {
-    super(props)
+const SchoolInfo = () => {
+  const [school, setSchool] = useState({})
 
-    this.state = {
-      school: {},
-    }
-
-    this.SchoolInfo = this.SchoolInfo.bind(this)
-    this.SchoolForm = this.SchoolForm.bind(this)
-    this.toggleView = this.toggleView.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(e) {
+  const handleChange = (e) => {
     e.preventDefault()
-    this.setState({
-      school: { name: e.target.schoolname.value, 
+
+    console.log(e.target.name.value)
+
+    setSchool({name: e.target.schoolname.value,
                 major: e.target.major.value, 
                 year: e.target.year.value
-      }
     })
 
-    this.toggleView()
+    toggleView()
   }
 
-  SchoolInfo() {
-    return (
-      <div id="school-info" class="hidden">
-        <div>{this.state.school.name}</div>
-        <div>{this.state.school.major}</div>
-        <div>{this.state.school.year}</div>
-
-        <button onClick={this.toggleView}>Edit</button>
-      </div>
-      
-    )
-  }
-
-  toggleView() {
+  const toggleView = () => {
     document.getElementById('school-form').classList.toggle('hidden')
     document.getElementById('school-info').classList.toggle('hidden')
   }
 
-  SchoolForm() {
-    return(
-      <form id="school-form" onSubmit={this.handleChange}>
+  return (
+    <div>
+      <div id="school-info" class="hidden">
+        <div>{school.name}</div>
+        <div>{school.major}</div>
+        <div>{school.year}</div>
+
+        <button onClick={toggleView}>Edit</button>
+      </div>
+      
+      <form id="school-form" onSubmit={handleChange}>
         <label for="schoolname">School Name</label>
         <input type='text' name="schoolname" id="schoolname" />
 
@@ -60,17 +45,8 @@ class SchoolInfo extends Component {
         
         <input type="submit" class="btn "/>
       </form>
-    )
-  }
-
-  render() {
-    return (
-      <div>
-        <this.SchoolForm />
-        <this.SchoolInfo />
-      </div>
-    );
-  }
+    </div>
+  )
 }
 
 export default SchoolInfo;
