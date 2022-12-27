@@ -25,6 +25,7 @@ class App extends Component {
   render() {
     return (
       <div id='main' className="form">
+        <h1>CV</h1>
         <PersonalInfo />
         <SchoolInfo />
         <WorkInfo />

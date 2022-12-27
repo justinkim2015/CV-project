@@ -34,13 +34,16 @@ class SchoolInfo extends Component {
         <div>{this.state.school.name}</div>
         <div>{this.state.school.major}</div>
         <div>{this.state.school.year}</div>
+
+        <button onClick={this.toggleView}>Edit</button>
       </div>
+      
     )
   }
 
   toggleView() {
-    document.getElementById('school-form').classList.add('hidden')
-    document.getElementById('school-info').classList.remove('hidden')
+    document.getElementById('school-form').classList.toggle('hidden')
+    document.getElementById('school-info').classList.toggle('hidden')
   }
 
   SchoolForm() {

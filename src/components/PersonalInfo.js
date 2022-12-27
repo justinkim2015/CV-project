@@ -30,8 +30,8 @@ class PersonalInfo extends Component {
   }
 
   toggleView() {
-    document.getElementById('personal-form').classList.add('hidden')
-    document.getElementById('personal-info').classList.remove('hidden')
+    document.getElementById('personal-form').classList.toggle('hidden')
+    document.getElementById('personal-info').classList.toggle('hidden')
   }
 
   personalForm() {
@@ -57,6 +57,8 @@ class PersonalInfo extends Component {
         <div>{this.state.personal.name}</div>
         <div>{this.state.personal.email}</div>
         <div>{this.state.personal.phone}</div>
+
+        <button onClick={this.toggleView}>Edit</button>
       </div>
     )
   }

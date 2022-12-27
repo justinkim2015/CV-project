@@ -26,6 +26,8 @@ class WorkInfo extends Component {
         <div>{this.state.work.start}</div>
         <div>{this.state.work.end}</div>
         <div>{this.state.work.tasks}</div>
+
+        <button onClick={this.toggleView}>Edit</button>
       </div>
     )
   }
@@ -45,8 +47,8 @@ class WorkInfo extends Component {
   }
 
   toggleView() {
-    document.getElementById('work-form').classList.add('hidden')
-    document.getElementById('work-info').classList.remove('hidden')
+    document.getElementById('work-form').classList.toggle('hidden')
+    document.getElementById('work-info').classList.toggle('hidden')
   }
 
   workForm() {
